@@ -3,89 +3,237 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f6fb">
 <title>DigiSoft E-Learning</title>
 <style>
-:root{--bg:#f4f6fb;--card:#fff;--tx:#0f1b3d;--mu:#5d6a85;--pr:#2f5bea;--pr2:#e9eeff;--bd:#e3e8f2;--sh:0 6px 24px rgba(20,40,90,.08)}
+:root{color-scheme:light dark;--bg:#f4f6fb;--card:#fff;--tx:#0f1b3d;--mu:#5d6a85;--pr:#2f5bea;--pr2:#e9eeff;--bd:#e3e8f2;--sh:0 6px 24px rgba(20,40,90,.08)}
 @media(prefers-color-scheme:dark){:root{--bg:#0c1220;--card:#151e33;--tx:#edf1fa;--mu:#9aa7c2;--pr:#7ea2ff;--pr2:#1b2a50;--bd:#26324f;--sh:none}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--bd);z-index:9;padding-top:env(safe-area-inset-top,0)}
-nav{max-width:1100px;margin:auto;display:flex;align-items:center;gap:4px;padding:10px 16px;flex-wrap:wrap}
-.logo{font-weight:800;font-size:21px;color:var(--pr);margin-right:auto;text-decoration:none}
-nav a{color:var(--tx);text-decoration:none;padding:7px 12px;border-radius:9px;font-size:15px}nav a:hover,nav a.on{background:var(--pr2);color:var(--pr)}
-main{max-width:1100px;margin:auto;padding:24px 16px 56px;min-height:70vh}
-a{color:var(--pr)}.btn{display:inline-block;background:var(--pr);color:#fff;border:0;padding:10px 18px;border-radius:11px;font:600 15px inherit;cursor:pointer;text-decoration:none}
-.btn.alt{background:var(--pr2);color:var(--pr)}.btn.sm{padding:6px 13px;font-size:14px}.btn.danger{background:#fde8e8;color:#b42318}
-.hero{background:linear-gradient(135deg,#2f5bea,#8b3fe0);color:#fff;border-radius:22px;padding:56px 32px;margin-bottom:30px;box-shadow:var(--sh)}
-.hero h1{margin:0 0 12px;font-size:clamp(28px,5vw,44px);line-height:1.15}.hero p{max-width:560px;font-size:18px;opacity:.95}
-.hero .btn{background:#fff;color:#2f5bea;margin:6px 8px 0 0}.hero .btn.alt{background:rgba(255,255,255,.2);color:#fff}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px;box-shadow:var(--sh)}
-.card h3{margin:6px 0}.tag{font-size:12px;background:var(--pr2);color:var(--pr);padding:3px 10px;border-radius:99px;font-weight:700}
-.mu{color:var(--mu);font-size:14px}h2{margin:30px 0 14px}.lvc{text-decoration:none;color:var(--tx)}
-.lv{height:160px;border-radius:16px;display:grid;place-items:center;font-size:58px;margin-bottom:10px}.lvc b{font-size:18px}
-.badge{background:#d9f5e3;color:#0b6b35;font-size:12px;font-weight:700;padding:3px 11px;border-radius:99px}.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
-input,select,textarea{width:100%;padding:11px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
-.form{max-width:480px;margin:auto}.tabs{display:flex;gap:8px;margin:10px 0}
-.tabs button{flex:1;padding:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:11px;font:600 15px inherit;cursor:pointer}.tabs button.on{background:var(--pr);color:#fff;border-color:var(--pr)}
-.price{font-size:26px;font-weight:800}#m{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);max-width:92vw;z-index:20}
-.msg{padding:12px 18px;border-radius:12px;background:var(--tx);color:var(--bg);box-shadow:var(--sh)}
-.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd);flex-wrap:wrap}
-.ml li{margin:8px 0}.ml a{color:var(--tx);text-decoration:none}.ml a:hover{color:var(--pr)}
-footer{text-align:center;color:var(--mu);font-size:13px;padding:24px}.two{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.confirmation-card{max-width:520px;margin:80px auto;text-align:center}
-.confirmation-card h2{margin-top:0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--bd);z-index:9;padding-top:env(safe-area-inset-top,0)}nav{max-width:1100px;margin:auto;display:flex;align-items:center;gap:4px;padding:10px 16px;flex-wrap:wrap}.logo{font-weight:800;font-size:21px;color:var(--pr);margin-right:auto;text-decoration:none}nav a{color:var(--tx);text-decoration:none;padding:7px 12px;border-radius:9px;font-size:15px}nav a:hover,nav a.on{background:var(--pr2);color:var(--pr)}main{max-width:1100px;margin:auto;padding:24px 16px 56px;min-height:70vh}a{color:var(--pr)}.btn{display:inline-block;background:var(--pr);color:#fff;border:0;padding:10px 18px;border-radius:11px;font:600 15px/1.4 inherit;cursor:pointer;text-decoration:none}.btn.alt{background:var(--pr2);color:var(--pr)}.btn.sm{padding:6px 13px;font-size:14px}.btn:disabled{opacity:.55;cursor:not-allowed}.hero{background:linear-gradient(135deg,#2f5bea,#8b3fe0);color:#fff;border-radius:22px;padding:clamp(28px,6vw,56px) 32px;margin-bottom:30px;box-shadow:var(--sh)}.hero h1{margin:0 0 12px;font-size:clamp(28px,5vw,44px);line-height:1.15}.hero p{max-width:560px;font-size:18px;opacity:.95}.hero .btn{background:#fff;color:#2f5bea;margin:6px 8px 0 0}.hero .btn.alt{background:rgba(255,255,255,.2);color:#fff}.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr))}.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px;box-shadow:var(--sh)}.card h3{margin:6px 0}.tag{font-size:12px;background:var(--pr2);color:var(--pr);padding:3px 10px;border-radius:99px;font-weight:700}.mu{color:var(--mu);font-size:14px}h2{margin:30px 0 14px}.lvc{text-decoration:none;color:var(--tx)}.lv{height:160px;border-radius:16px;display:grid;place-items:center;font-size:58px;margin-bottom:10px}.lvc b{font-size:18px}.badge{background:#d9f5e3;color:#0b6b35;font-size:12px;font-weight:700;padding:3px 11px;border-radius:99px}.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}input,select,textarea{width:100%;padding:11px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}.form{max-width:480px;margin:auto}.tabs{display:flex;gap:8px;margin:10px 0}.tabs button{flex:1;padding:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:11px;font:600 15px inherit;cursor:pointer}.tabs button.on{background:var(--pr);color:#fff;border-color:var(--pr)}.price{font-size:26px;font-weight:800}#m{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);max-width:92vw;z-index:20}.msg{padding:12px 18px;border-radius:12px;background:var(--tx);color:var(--bg);box-shadow:var(--sh)}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd);flex-wrap:wrap}.ml li{margin:8px 0}.ml a{color:var(--tx);text-decoration:none}.ml a:hover{color:var(--pr)}footer{text-align:center;color:var(--mu);font-size:13px;padding:24px}.two{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}.confirmation-card{max-width:520px;margin:60px auto;text-align:center}.confirmation-card h2{margin-top:0}.error{color:#b42318}
 </style>
 </head>
 <body>
-<header><nav id="nav"></nav></header>
-<main id="app"></main>
-<div id="m"></div>
+<header><nav id="nav" aria-label="Main navigation"></nav></header>
+<main id="app" aria-live="polite"></main><div id="m" role="status" aria-live="polite"></div>
 <footer>© 2026 DigiSoft E-Learning</footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script src="config.js"></script>
 <script>
-const sb=supabase.createClient(CFG.url,CFG.key);
-const LV={junior_secondary:"Junior Secondary",senior_secondary:"Senior Secondary",school_leaver:"School Leavers"};
-const KEY={junior:"junior_secondary",senior:"senior_secondary",leavers:"school_leaver"};
-const $=s=>document.querySelector(s);let S={u:null,p:null},regType="individual";
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]));
-const toast=t=>{$("#m").innerHTML=`<div class="msg">${esc(t)}</div>`;setTimeout(()=>$("#m").innerHTML="",4500)};
-const fd=f=>Object.fromEntries(new FormData(f));
-const lvOpts=o=>Object.entries(LV).map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
-async function load(){const{data:{session}}=await sb.auth.getSession();S.u=session?.user||null;S.p=null;
- if(S.u){const{data}=await sb.from("profiles").select("*").eq("id",S.u.id).maybeSingle();S.p=data}}
-function nav(h){const adm=S.p?.role==="admin",L=[["home","Home"],["courses","Courses"],["pricing","Pricing"]].concat(S.u?[["dashboard","My Learning"]].concat(adm?[["admin","Admin"]]:[]):[["login","Log in"],["register","Register"]]);
- $("#nav").innerHTML='<a class="logo" href="#home">🎓 DigiSoft</a>'+L.map(([k,t])=>`<a href="#${k}" class="${h===k?"on":""}">${t}</a>`).join("")+(S.u?' <a href="#" data-act="out">Log out</a>':"")}
-const cc=c=>`<div class="card"><span class="tag">${LV[c.level]}</span><h3>${esc(c.title)}</h3><p class="mu">${esc(c.description||"")}</p><a class="btn sm" href="#course-${c.id}">View course</a></div>`;
-const V={
-home:async()=>`<section class="hero"><h1>Learn anywhere. Teach with confidence.</h1><p>Recorded lessons, notes and revision materials for Junior Secondary, Senior Secondary and school leavers.</p><a class="btn" href="#register">Start free trial</a><a class="btn alt" href="#courses">Browse courses</a></section>
-<h2 style="margin-top:0">Choose your level</h2><div class="grid"><a class="lvc" href="#courses-junior"><div class="lv" style="background:linear-gradient(135deg,#34d399,#0ea5e9)">📘</div><b>Junior Secondary</b><div class="mu">Notes & worksheets</div></a><a class="lvc" href="#courses-senior"><div class="lv" style="background:linear-gradient(135deg,#f87171,#f59e0b)">📚</div><b>Senior Secondary</b><div class="mu">Revision & past papers</div></a><a class="lvc" href="#courses-leavers"><div class="lv" style="background:linear-gradient(135deg,#a78bfa,#ec4899)">🎓</div><b>School Leavers</b><div class="mu">Short courses</div></a></div>
-<div class="card" style="margin-top:28px"><div class="hd"><h3 style="margin:0">Learning materials</h3><span class="badge">Free trial available</span></div><ul class="ml"><li>Download notes and revision PDFs</li><li>Watch recorded teaching sessions</li><li>Learn at your own pace, on any device</li><li><a href="#courses">Enrol in short courses →</a></li></ul></div>
-<p class="mu" style="margin-top:18px">Schools and training centres: <a href="#register">register as an Organization</a>.</p>`,
-async courses(f){const{data}=await sb.from("courses").select("*").eq("published",true).order("title");const l=(data||[]).filter(c=>!f||c.level===f);
- return`<h2 style="margin-top:0">Courses</h2><div class="tabs"><a class="btn alt" href="#courses">All</a>${Object.entries(KEY).map(([k,v])=>`<a class="btn alt" href="#courses-${k}">${LV[v]}</a>`).join("")}</div><div class="grid">${l.map(cc).join("")||'<p class="mu">No courses yet.</p>'}</div>`},
-async course(id){const{data:c}=await sb.from("courses").select("*").eq("id",id).maybeSingle();if(!c)return"<p>Course not found.</p>";
- const act=S.u?"":'<p class="mu">Please <a href="#login">log in</a> or <a href="#register">register</a> to enrol.</p>';
- return`<div class="form" style="max-width:640px"><span class="tag">${LV[c.level]}</span><h2 style="margin:8px 0">${esc(c.title)}</h2><p>${esc(c.description||"")}</p>${act}<div class="grid"><div class="card"><h3>Free trial</h3><div class="price">KES 0</div><p class="mu">7 days, one trial per account</p><button class="btn sm" data-act="trial" data-id="${c.id}" ${S.u?"":"disabled"}>Start trial</button></div><div class="card"><h3>Subscribe</h3><div class="price">${CFG.prices.monthly}</div><p class="mu">or ${CFG.prices.termly}</p><button class="btn sm alt" data-act="pay" ${S.u?"":"disabled"}>How to pay</button></div></div><p id="pay" class="mu"></p></div>`},
-pricing:async()=>`<h2 style="margin-top:0">Pricing</h2><div class="grid"><div class="card"><h3>Free Trial</h3><div class="price">KES 0</div><p class="mu">7 days on one course</p></div><div class="card"><h3>Monthly</h3><div class="price">${CFG.prices.monthly}</div><p class="mu">Per course</p></div><div class="card"><h3>Termly</h3><div class="price">${CFG.prices.termly}</div><p class="mu">Best value</p></div></div><p class="mu">Organizations: <a href="#register">register as an Organization</a> to arrange bulk access.</p>`,
-register:async()=>{const o=regType=== "organization";return`<div class="form"><h2 style="margin-top:0">Create your account</h2><div class="tabs"><button data-act="rt" data-id="individual" class="${o?"":"on"}">Individual</button><button data-act="rt" data-id="organization" class="${o?"on":""}">Organization</button></div><form data-form="reg"><label>${o?"Contact person":"Full name"}</label><input name="full_name" required>${o?`<label>Organization name</label><input name="org_name" required><label>Organization type</label><select name="org_type"><option>Junior Secondary School</option><option>Senior Secondary School</option><option>Training institution</option><option>Other</option></select><label>Expected learners</label><input name="expected_learners" type="number" min="1" value="30">`: `<label>I am a</label><select name="who"><option value="learner|junior_secondary">Junior Secondary learner</option><option value="learner|senior_secondary">Senior Secondary learner</option><option value="teacher|">Teacher</option><option value="leaver|school_leaver">High school leaver</option></select>`}<label>Email</label><input name="email" type="email" required><label>Password (min 6)</label><input name="password" type="password" minlength="6" required><p><button class="btn" style="width:100%">Register</button></p></form><p class="mu">Have an account? <a href="#login">Log in</a></p></div>`},
-login:async()=>`<div class="form"><h2 style="margin-top:0">Log in</h2><form data-form="login"><label>Email</label><input name="email" type="email" required><label>Password</label><input name="password" type="password" required><p><button class="btn" style="width:100%">Log in</button></p></form><p class="mu"><a href="#" data-act="reset">Forgot password?</a> · <a href="#register">Create account</a></p></div>`,
-async dashboard(){if(!S.u)return V.login();const[{data:en},{data:ms}]=await Promise.all([sb.from("enrollments").select("*,courses(title,level)").order("ends_at",{ascending:false}),sb.from("materials").select("*").order("position")]);const now=Date.now();let h=`<h2 style="margin-top:0">Welcome, ${esc(S.p?.full_name||"")}</h2><p class="mu">${S.p?.account_type=== "organization"?"Organization account":"Individual account"}</p>`;if(!(en||[]).length)return h+'<div class="card"><p>You have not enrolled yet.</p><a class="btn" href="#courses">Find a course</a></div>';return h+en.map(e=>{const live=e.status=== "active"&&new Date(e.ends_at)>now,list=(ms||[]).filter(m=>m.course_id===e.course_id);return`<div class="card" style="margin-bottom:16px"><div class="hd"><h3 style="margin:0">${esc(e.courses.title)}</h3><span class="badge">${e.plan} · ${live?"until "+new Date(e.ends_at).toLocaleDateString():"expired"}</span></div>${live?(list.map(m=>`<div class="row"><span>${m.kind=== "video"?"🎬":"📄"} ${esc(m.title)}</span>${m.kind=== "video"?`<a class="btn sm alt" href="${esc(m.video_url)}" target="_blank" rel="noopener noreferrer">Watch</a>`:`<button class="btn sm alt" data-act="dl" data-id="${esc(m.file_path)}">Download</button>`}</div>`).join("")||'<p class="mu">Materials coming soon.</p>'): '<p class="mu">Access ended. <a href="#course-'+e.course_id+'">Renew</a></p>'}</div>`}).join("")},
-async admin(){if(S.p?.role!=== "admin")return"<p>Admins only.</p>";const[{data:cs},{data:ps},{data:os}]=await Promise.all([sb.from("courses").select("*").order("title"),sb.from("profiles").select("id,full_name,role").order("full_name"),sb.from("organizations").select("*").order("created_at",{ascending:false})]);const co=(cs||[]).map(c=>`<option value="${c.id}">${esc(c.title)}</option>`).join("");return`<h2 style="margin-top:0">Admin</h2><div class="two"><div class="card"><h3>Add course</h3><form data-form="course"><label>Title</label><input name="title" required><label>Level</label><select name="level">${lvOpts()}</select><label>Description</label><textarea name="description" rows="2"></textarea><label><input type="checkbox" name="published" style="width:auto"> Publish now</label><p><button class="btn">Save course</button></p></form></div><div class="card"><h3>Add material</h3><form data-form="mat"><label>Course</label><select name="course_id">${co}</select><label>Title</label><input name="title" required><label>Type</label><select name="kind"><option value="document">Document (upload)</option><option value="video">Video (link)</option></select><label>File (documents)</label><input type="file" name="file"><label>Video link (Vimeo/YouTube unlisted)</label><input name="video_url" type="url"><p><button class="btn">Add material</button></p></form></div><div class="card"><h3>Grant access</h3><form data-form="grant"><label>User</label><select name="user_id">${(ps||[]).map(p=>`<option value="${p.id}">${esc(p.full_name)} (${p.role})</option>`).join("")}</select><label>Course</label><select name="course_id">${co}</select><label>Plan</label><select name="plan"><option value="monthly">Monthly (30 days)</option><option value="termly">Termly (90 days)</option></select><p><button class="btn">Activate</button></p></form></div><div class="card"><h3>Organizations</h3>${(os||[]).map(o=>`<div class="row"><span>${esc(o.name)} <span class="tag">${o.status}</span></span>${o.status!=== "approved"?`<button class="btn sm" data-act="appr" data-id="${o.id}">Approve</button>`:""}</div>`).join("")||'<p class="mu">None yet.</p>'}</div></div><div class="card" style="margin-top:18px"><h3>Courses</h3>${(cs||[]).map(c=>`<div class="row"><span>${esc(c.title)} <span class="tag">${c.published?"published":"draft"}</span></span><button class="btn sm alt" data-act="pub" data-id="${c.id}" data-v="${c.published}">${c.published?"Unpublish":"Publish"}</button></div>`).join("")}</div>`}};
-async function render(){let h=location.hash.slice(1)||"home",a=null;if(h.startsWith("courses-")){a=KEY[h.slice(8)];h="courses"}else if(h.startsWith("course-")){a=h.slice(7);h="course"}nav(h);$("#app").innerHTML='<p class="mu">Loading…</p>';try{$("#app").innerHTML=await(V[h]||V.home)(a)}catch(e){$("#app").innerHTML="<p>Something went wrong. Check config.js.</p>"}window.scrollTo(0,0)}
-const done=async(p,t)=>{const{error}=await p;if(error)toast(error.message);else{if(t)toast(t);render()}};
-document.addEventListener("submit",async e=>{const f=e.target,k=f.dataset.form;if(!k)return;e.preventDefault();const d=fd(f);
- if(k=== "login"){const{error}=await sb.auth.signInWithPassword(d);if(error)return toast(error.message);await load();location.hash="dashboard";render()}
- if(k=== "reg"){const[role,level]=(d.who||"|").split("|"),o=regType=== "organization";const{data,error}=await sb.auth.signUp({email:d.email,password:d.password,options:{emailRedirectTo:`${location.origin}${location.pathname}#confirmed`,data:{full_name:d.full_name,account_type:regType,role:o?"":role,level:o?"":level,org_name:d.org_name,org_type:d.org_type,expected_learners:d.expected_learners}}});if(error)return toast(error.message);if(!data.session){$("#app").innerHTML=`<div class="card confirmation-card"><h2>Check your email</h2><p>We sent a confirmation link to <strong>${esc(d.email)}</strong>.</p><p class="mu">Open the link to confirm your account, then you will return to DigiSoft automatically.</p><a class="btn" href="#login">Back to log in</a></div>`;return}await load();location.hash="dashboard";render()}
- if(k=== "course")done(sb.from("courses").insert({title:d.title,slug:d.title.toLowerCase().replace(/[^a-z0-9]+/g,"-")+"-"+Date.now().toString(36),level:d.level,description:d.description,published:!!d.published}),"Course saved");
- if(k=== "mat"){let path=null;const file=f.file.files[0];if(d.kind=== "document"){if(!file)return toast("Choose a file");path=`${d.course_id}/${file.name}`;const{error}=await sb.storage.from("materials").upload(path,file,{upsert:true});if(error)return toast(error.message)}done(sb.from("materials").insert({course_id:d.course_id,title:d.title,kind:d.kind,file_path:path,video_url:d.video_url||null}),"Material added")}
- if(k=== "grant")done(sb.from("enrollments").upsert({user_id:d.user_id,course_id:d.course_id,plan:d.plan,status:"active",starts_at:new Date().toISOString(),ends_at:new Date(Date.now()+(d.plan=== "termly"?90:30)*864e5).toISOString()},{onConflict:"user_id,course_id"}),"Access activated")});
-document.addEventListener("click",async e=>{const b=e.target.closest("[data-act]");if(!b)return;const a=b.dataset.act,id=b.dataset.id;if(b.tagName=== "A")e.preventDefault();if(a=== "out"){await sb.auth.signOut();await load();location.hash="home";render()}if(a=== "rt") {regType=id;render()}if(a=== "trial")done(sb.from("enrollments").insert({user_id:S.u.id,course_id:id,plan:"trial",ends_at:new Date(Date.now()+7*864e5).toISOString()}).then(r=>{if(!r.error)location.hash="dashboard";else if(r.error.code=== "23505")r.error.message="You have already used your free trial or enrolled in this course.";return r}),"Trial started");if(a=== "pay")$("#pay").textContent=CFG.payInfo;if(a=== "dl") {const{data,error}=await sb.storage.from("materials").createSignedUrl(id,60,{download:true});if(error)return toast(error.message);location.href=data.signedUrl}if(a=== "appr")done(sb.from("organizations").update({status:"approved"}).eq("id",id),"Approved");if(a=== "pub")done(sb.from("courses").update({published:b.dataset.v!=== "true"}).eq("id",id));if(a=== "reset") {const em=prompt("Your email:");if(em)done(sb.auth.resetPasswordForEmail(em,{redirectTo:`${location.origin}${location.pathname}#login`}),"Reset link sent")}});
-window.addEventListener("hashchange",render);
-sb.auth.onAuthStateChange(async(event,session)=>{if(event=== "SIGNED_IN"&&session?.user){await load();if(location.hash=== "#confirmed"||location.hash=== ""){location.hash="dashboard";await render();toast("Email confirmed — welcome to DigiSoft!")}else await render()}else if(event=== "SIGNED_OUT"){await load();await render()}});
-async function initialize(){const params=new URLSearchParams(location.search);const hashParams=new URLSearchParams(location.hash.startsWith("#")?location.hash.slice(1):location.hash);const authError=params.get("error_description")||hashParams.get("error_description");if(authError){toast(authError.replace(/\+/g," "));return render()}await load();if(location.hash=== "#confirmed"&&S.u){location.hash="dashboard";await render();toast("Email confirmed — welcome to DigiSoft!")}else await render()}
-initialize();
+(() => {
+  const app = document.querySelector('#app');
+  const LV = { junior_secondary:'Junior Secondary', senior_secondary:'Senior Secondary', school_leaver:'School Leavers' };
+  const KEY = { junior:'junior_secondary', senior:'senior_secondary', leavers:'school_leaver' };
+  const state = { user:null, profile:null, registerType:'individual', rendering:false };
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
+  const notify = message => {
+    const node = document.querySelector('#m');
+    node.innerHTML = `<div class="msg">${esc(message)}</div>`;
+    window.clearTimeout(notify.timer);
+    notify.timer = window.setTimeout(() => { node.textContent = ''; }, 5000);
+  };
+  const supabaseReady = () => {
+    if (!window.supabase || !window.CFG?.url || !window.CFG?.key) throw new Error('Supabase is not configured. Check config.js and reload.');
+    return window.supabase.createClient(window.CFG.url, window.CFG.key, { auth:{ flowType:'pkce', detectSessionInUrl:true, persistSession:true, autoRefreshToken:true } });
+  };
+  let sb;
+  try { sb = supabaseReady(); } catch (error) { app.innerHTML = `<section class="card"><h1>DigiSoft is temporarily unavailable</h1><p>${esc(error.message)}</p></section>`; return; }
+
+  async function loadUser() {
+    const { data, error } = await sb.auth.getSession();
+    if (error) throw error;
+    state.user = data.session?.user ?? null;
+    state.profile = null;
+    if (state.user) {
+      const result = await sb.from('profiles').select('*').eq('id', state.user.id).maybeSingle();
+      if (result.error) console.warn('Profile lookup failed:', result.error.message);
+      state.profile = result.data ?? null;
+    }
+  }
+  function navigation(route) {
+    const links = [['home','Home'],['courses','Courses'],['pricing','Pricing']];
+    if (state.user) {
+      links.push(['dashboard','My Learning']);
+      if (state.profile?.role === 'admin') links.push(['admin','Admin']);
+    } else links.push(['login','Log in'],['register','Register']);
+    document.querySelector('#nav').innerHTML = `<a class="logo" href="#home">🎓 DigiSoft</a>${links.map(([key,label]) => `<a href="#${key}" class="${route===key?'on':''}">${label}</a>`).join('')}${state.user ? '<a href="#" data-act="out">Log out</a>' : ''}`;
+  }
+  const courseCard = course => `<article class="card"><span class="tag">${esc(LV[course.level] || course.level || 'Course')}</span><h3>${esc(course.title)}</h3><p class="mu">${esc(course.description || '')}</p><a class="btn sm" href="#course-${encodeURIComponent(course.id)}">View course</a></article>`;
+  function home() {
+    return `<section class="hero"><h1>Learn anywhere. Teach with confidence.</h1><p>Recorded lessons, notes and revision materials for Junior Secondary, Senior Secondary and school leavers.</p><a class="btn" href="#register">Create an account</a><a class="btn alt" href="#courses">Browse courses</a></section><h2 style="margin-top:0">Choose your level</h2><div class="grid"><a class="lvc" href="#courses-junior"><div class="lv" style="background:linear-gradient(135deg,#34d399,#0ea5e9)">📘</div><b>Junior Secondary</b><div class="mu">Notes &amp; worksheets</div></a><a class="lvc" href="#courses-senior"><div class="lv" style="background:linear-gradient(135deg,#f87171,#f59e0b)">📚</div><b>Senior Secondary</b><div class="mu">Revision &amp; past papers</div></a><a class="lvc" href="#courses-leavers"><div class="lv" style="background:linear-gradient(135deg,#a78bfa,#ec4899)">🎓</div><b>School Leavers</b><div class="mu">Short courses</div></a></div><section class="card" style="margin-top:28px"><h3>Learning materials</h3><ul><li>Download notes and revision PDFs</li><li>Watch recorded teaching sessions</li><li>Learn at your own pace, on any device</li></ul></section><p class="mu">Schools and training centres: <a href="#register" data-register-type="organization">register as an Organization</a>.</p>`;
+  }
+  async function courses(level) {
+    const { data, error } = await sb.from('courses').select('*').eq('published',true).order('title');
+    if (error) throw error;
+    const filtered = (data || []).filter(course => !level || course.level === level);
+    return `<h2 style="margin-top:0">Courses</h2><div class="tabs"><a class="btn alt" href="#courses">All</a>${Object.entries(KEY).map(([key,value]) => `<a class="btn alt" href="#courses-${key}">${esc(LV[value])}</a>`).join('')}</div><div class="grid">${filtered.map(courseCard).join('') || '<p class="mu">No courses available yet.</p>'}</div>`;
+  }
+  async function coursePage(id) {
+    const { data: course, error } = await sb.from('courses').select('*').eq('id',id).maybeSingle();
+    if (error) throw error;
+    if (!course) return '<p>Course not found.</p>';
+    const disabled = state.user ? '' : 'disabled';
+    return `<div class="form" style="max-width:640px"><span class="tag">${esc(LV[course.level] || course.level || 'Course')}</span><h2 style="margin:8px 0">${esc(course.title)}</h2><p>${esc(course.description || '')}</p>${state.user ? '' : '<p class="mu">Please <a href="#login">log in</a> or <a href="#register">create an account</a> to enrol.</p>'}<div class="grid"><article class="card"><h3>Free trial</h3><div class="price">KES 0</div><p class="mu">7 days, one trial per account</p><button class="btn sm" data-act="trial" data-id="${esc(course.id)}" ${disabled}>Start trial</button></article><article class="card"><h3>Subscribe</h3><div class="price">${esc(CFG.prices.monthly)}</div><p class="mu">or ${esc(CFG.prices.termly)}</p><button class="btn sm alt" data-act="pay" ${disabled}>How to pay</button></article></div><p id="pay" class="mu"></p></div>`;
+  }
+  function registerPage() {
+    const org = state.registerType === 'organization';
+    return `<div class="form"><h2 style="margin-top:0">Create your account</h2><div class="tabs"><button type="button" data-act="rt" data-id="individual" class="${org?'':'on'}">Individual</button><button type="button" data-act="rt" data-id="organization" class="${org?'on':''}">Organization</button></div><form data-form="reg"><label for="full_name">${org?'Contact person':'Full name'}</label><input id="full_name" name="full_name" autocomplete="name" required>${org?'<label for="org_name">Organization name</label><input id="org_name" name="org_name" required><label for="org_type">Organization type</label><select id="org_type" name="org_type"><option>Junior Secondary School</option><option>Senior Secondary School</option><option>Training institution</option><option>Other</option></select><label for="expected_learners">Expected learners</label><input id="expected_learners" name="expected_learners" type="number" min="1" value="30">':'<label for="who">I am a</label><select id="who" name="who"><option value="learner|junior_secondary">Junior Secondary learner</option><option value="learner|senior_secondary">Senior Secondary learner</option><option value="teacher|">Teacher</option><option value="leaver|school_leaver">High school leaver</option></select>'}<label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required><label for="password">Password (minimum 6 characters)</label><input id="password" name="password" type="password" autocomplete="new-password" minlength="6" required><p><button class="btn" style="width:100%" type="submit">Create account</button></p></form><p class="mu">Already have an account? <a href="#login">Log in</a></p></div>`;
+  }
+  function loginPage() {
+    return `<div class="form"><h2 style="margin-top:0">Log in</h2><form data-form="login"><label for="login-email">Email</label><input id="login-email" name="email" type="email" autocomplete="email" required><label for="login-password">Password</label><input id="login-password" name="password" type="password" autocomplete="current-password" required><p><button class="btn" style="width:100%">Log in</button></p></form><p class="mu"><a href="#" data-act="reset">Forgot password?</a> · <a href="#register">Create account</a></p></div>`;
+  }
+  async function dashboard() {
+    if (!state.user) return loginPage();
+    const [{data:enrollments,error:enrollmentError},{data:materials,error:materialError}] = await Promise.all([sb.from('enrollments').select('*,courses(title,level)').order('ends_at',{ascending:false}),sb.from('materials').select('*').order('position')]);
+    if (enrollmentError) throw enrollmentError;
+    if (materialError) throw materialError;
+    const header = `<h2 style="margin-top:0">Welcome, ${esc(state.profile?.full_name || state.user.email || 'Learner')}</h2><p class="mu">${state.profile?.account_type === 'organization' ? 'Organization account' : 'Individual account'}</p>`;
+    if (!enrollments?.length) return `${header}<section class="card"><p>You have not enrolled yet.</p><a class="btn" href="#courses">Find a course</a></section>`;
+    return header + enrollments.map(enrollment => {
+      const active = enrollment.status === 'active' && new Date(enrollment.ends_at) > new Date();
+      const title = enrollment.courses?.title || 'Course';
+      const rows = active ? (materials || []).filter(item => item.course_id === enrollment.course_id).map(item => `<div class="row"><span>${item.kind === 'video' ? '🎬' : '📄'} ${esc(item.title)}</span>${item.kind === 'video' ? `<a class="btn sm alt" href="${esc(item.video_url)}" target="_blank" rel="noopener noreferrer">Watch</a>` : `<button class="btn sm alt" data-act="dl" data-id="${esc(item.file_path)}">Download</button>`}</div>`).join('') || '<p class="mu">Materials coming soon.</p>' : `<p class="mu">Access ended. <a href="#course-${encodeURIComponent(enrollment.course_id)}">Renew</a></p>`;
+      return `<section class="card" style="margin-bottom:16px"><div class="hd"><h3>${esc(title)}</h3><span class="badge">${esc(enrollment.plan)} · ${active ? `until ${new Date(enrollment.ends_at).toLocaleDateString()}` : 'expired'}</span></div>${rows}</section>`;
+    }).join('');
+  }
+  async function adminPage() {
+    if (state.profile?.role !== 'admin') return '<p>Admins only.</p>';
+    const [{data:courses,error:courseError},{data:profiles,error:profileError},{data:organizations,error:orgError}] = await Promise.all([sb.from('courses').select('*').order('title'),sb.from('profiles').select('id,full_name,role').order('full_name'),sb.from('organizations').select('*').order('created_at',{ascending:false})]);
+    if (courseError || profileError || orgError) throw courseError || profileError || orgError;
+    const options = (courses || []).map(item => `<option value="${esc(item.id)}">${esc(item.title)}</option>`).join('');
+    return `<h2 style="margin-top:0">Admin</h2><div class="two"><section class="card"><h3>Add course</h3><form data-form="course"><label>Title</label><input name="title" required><label>Level</label><select name="level">${Object.entries(LV).map(([key,label])=>`<option value="${key}">${label}</option>`).join('')}</select><label>Description</label><textarea name="description" rows="2"></textarea><label><input type="checkbox" name="published" style="width:auto"> Publish now</label><p><button class="btn">Save course</button></p></form></section><section class="card"><h3>Add material</h3><form data-form="mat"><label>Course</label><select name="course_id" required>${options}</select><label>Title</label><input name="title" required><label>Type</label><select name="kind"><option value="document">Document (upload)</option><option value="video">Video (link)</option></select><label>File (documents)</label><input type="file" name="file"><label>Video link</label><input name="video_url" type="url"><p><button class="btn">Add material</button></p></form></section><section class="card"><h3>Grant access</h3><form data-form="grant"><label>User</label><select name="user_id" required>${(profiles||[]).map(profile=>`<option value="${esc(profile.id)}">${esc(profile.full_name || 'User')} (${esc(profile.role || 'learner')})</option>`).join('')}</select><label>Course</label><select name="course_id" required>${options}</select><label>Plan</label><select name="plan"><option value="monthly">Monthly (30 days)</option><option value="termly">Termly (90 days)</option></select><p><button class="btn">Activate</button></p></form></section><section class="card"><h3>Organizations</h3>${(organizations||[]).map(org=>`<div class="row"><span>${esc(org.name)} <span class="tag">${esc(org.status)}</span></span>${org.status !== 'approved' ? `<button class="btn sm" data-act="appr" data-id="${esc(org.id)}">Approve</button>` : ''}</div>`).join('') || '<p class="mu">None yet.</p>'}</section></div><section class="card" style="margin-top:18px"><h3>Courses</h3>${(courses||[]).map(item=>`<div class="row"><span>${esc(item.title)} <span class="tag">${item.published?'published':'draft'}</span></span><button class="btn sm alt" data-act="pub" data-id="${esc(item.id)}" data-v="${String(item.published)}">${item.published?'Unpublish':'Publish'}</button></div>`).join('') || '<p class="mu">No courses yet.</p>'}</section>`;
+  }
+  async function render() {
+    if (state.rendering) return;
+    state.rendering = true;
+    try {
+      const raw = decodeURIComponent(location.hash.slice(1) || 'home');
+      let route = raw, argument = null;
+      if (raw.startsWith('courses-')) { argument = KEY[raw.slice(8)] || null; route = 'courses'; }
+      else if (raw.startsWith('course-')) { argument = raw.slice(7); route = 'course'; }
+      navigation(route);
+      app.innerHTML = '<p class="mu">Loading…</p>';
+      let html;
+      if (route === 'home') html = home();
+      else if (route === 'courses') html = await courses(argument);
+      else if (route === 'course') html = await coursePage(argument);
+      else if (route === 'pricing') html = `<h2 style="margin-top:0">Pricing</h2><div class="grid"><section class="card"><h3>Free trial</h3><div class="price">KES 0</div><p class="mu">7 days on one course</p></section><section class="card"><h3>Monthly</h3><div class="price">${esc(CFG.prices.monthly)}</div><p class="mu">Per course</p></section><section class="card"><h3>Termly</h3><div class="price">${esc(CFG.prices.termly)}</div><p class="mu">Best value</p></section></div><p class="mu">Organizations: <a href="#register" data-register-type="organization">register as an Organization</a> to arrange bulk access.</p>`;
+      else if (route === 'register') html = registerPage();
+      else if (route === 'login') html = loginPage();
+      else if (route === 'dashboard') html = await dashboard();
+      else if (route === 'admin') html = await adminPage();
+      else html = home();
+      app.innerHTML = html;
+      window.scrollTo(0,0);
+    } catch (error) {
+      console.error('DigiSoft page error:',error);
+      app.innerHTML = `<section class="card"><h2>Unable to load this page</h2><p>${esc(error.message || 'Please try again.')}</p><button class="btn" data-act="retry">Try again</button></section>`;
+    } finally { state.rendering = false; }
+  }
+  const values = form => Object.fromEntries(new FormData(form));
+  async function submit(event) {
+    const form = event.target;
+    const kind = form.dataset.form;
+    if (!kind) return;
+    event.preventDefault();
+    const data = values(form);
+    const submitButton = form.querySelector('button[type="submit"],button:not([type])');
+    if (submitButton) { submitButton.disabled = true; submitButton.setAttribute('aria-busy','true'); }
+    try {
+      if (kind === 'reg') {
+        const [role,level] = (data.who || '|').split('|');
+        const organization = state.registerType === 'organization';
+        const redirectTo = `${location.origin}${location.pathname}#confirmed`;
+        const {data:result,error} = await sb.auth.signUp({email:data.email.trim(),password:data.password,options:{emailRedirectTo:redirectTo,data:{full_name:data.full_name.trim(),account_type:state.registerType,role:organization?'':role,level:organization?'':level,org_name:data.org_name || '',org_type:data.org_type || '',expected_learners:data.expected_learners || ''}}});
+        if (error) throw error;
+        if (!result.session) {
+          app.innerHTML = `<section class="card confirmation-card"><h2>Check your email</h2><p>We sent a confirmation link to <strong>${esc(data.email)}</strong>.</p><p class="mu">Open the link to verify your email. You’ll return to DigiSoft to log in.</p><a class="btn" href="#login">Back to log in</a></section>`;
+          return;
+        }
+        await loadUser();
+        location.hash = 'dashboard';
+        await render();
+        notify('Account created successfully.');
+      } else if (kind === 'login') {
+        const {error} = await sb.auth.signInWithPassword({email:data.email.trim(),password:data.password});
+        if (error) throw error;
+        await loadUser();
+        location.hash = 'dashboard';
+        await render();
+      } else if (kind === 'course') {
+        const {error} = await sb.from('courses').insert({title:data.title.trim(),slug:data.title.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-')+'-'+Date.now().toString(36),level:data.level,description:data.description,published:!!data.published});
+        if (error) throw error;
+        notify('Course saved.'); await render();
+      } else if (kind === 'mat') {
+        let filePath = null;
+        if (data.kind === 'document') {
+          const file = form.elements.file.files[0];
+          if (!file) throw new Error('Choose a file to upload.');
+          filePath = `${data.course_id}/${file.name}`;
+          const upload = await sb.storage.from('materials').upload(filePath,file,{upsert:true});
+          if (upload.error) throw upload.error;
+        }
+        const {error} = await sb.from('materials').insert({course_id:data.course_id,title:data.title.trim(),kind:data.kind,file_path:filePath,video_url:data.video_url || null});
+        if (error) throw error;
+        notify('Material added.'); await render();
+      } else if (kind === 'grant') {
+        const now = new Date();
+        const end = new Date(now.getTime() + (data.plan === 'termly' ? 90 : 30)*86400000);
+        const {error} = await sb.from('enrollments').upsert({user_id:data.user_id,course_id:data.course_id,plan:data.plan,status:'active',starts_at:now.toISOString(),ends_at:end.toISOString()},{onConflict:'user_id,course_id'});
+        if (error) throw error;
+        notify('Access activated.'); await render();
+      }
+    } catch (error) { console.error('DigiSoft form error:',error); notify(error.message || 'Something went wrong. Please try again.'); }
+    finally { if (submitButton?.isConnected) { submitButton.disabled = false; submitButton.removeAttribute('aria-busy'); } }
+  }
+  async function click(event) {
+    const typeLink = event.target.closest('[data-register-type]');
+    if (typeLink) state.registerType = typeLink.dataset.registerType;
+    const button = event.target.closest('[data-act]');
+    if (!button) return;
+    const action = button.dataset.act, id = button.dataset.id;
+    if (button.tagName === 'A') event.preventDefault();
+    try {
+      if (action === 'rt') { state.registerType = id; await render(); }
+      else if (action === 'retry') await render();
+      else if (action === 'out') { const {error} = await sb.auth.signOut(); if (error) throw error; state.user=null;state.profile=null;location.hash='home';await render(); }
+      else if (action === 'trial') {
+        if (!state.user) { location.hash='login'; return; }
+        const {error} = await sb.from('enrollments').insert({user_id:state.user.id,course_id:id,plan:'trial',status:'active',starts_at:new Date().toISOString(),ends_at:new Date(Date.now()+7*86400000).toISOString()});
+        if (error) throw error;
+        location.hash='dashboard'; await render(); notify('Your free trial has started.');
+      } else if (action === 'pay') { document.querySelector('#pay').textContent = CFG.payInfo; }
+      else if (action === 'dl') {
+        const {data,error} = await sb.storage.from('materials').createSignedUrl(id,60,{download:true});
+        if (error) throw error;
+        location.assign(data.signedUrl);
+      } else if (action === 'appr') {
+        const {error} = await sb.from('organizations').update({status:'approved'}).eq('id',id); if (error) throw error; await render();
+      } else if (action === 'pub') {
+        const {error} = await sb.from('courses').update({published:button.dataset.v !== 'true'}).eq('id',id); if (error) throw error; await render();
+      } else if (action === 'reset') {
+        const email = window.prompt('Enter your account email:');
+        if (email) { const {error} = await sb.auth.resetPasswordForEmail(email.trim(),{redirectTo:`${location.origin}${location.pathname}#login`}); if (error) throw error; notify('Password reset link sent. Check your email.'); }
+      }
+    } catch (error) { console.error('DigiSoft action error:',error); notify(error.message || 'Action failed. Please try again.'); }
+  }
+  document.addEventListener('submit',submit);
+  document.addEventListener('click',click);
+  window.addEventListener('hashchange',render);
+  sb.auth.onAuthStateChange((event,session) => {
+    if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'USER_UPDATED') {
+      Promise.resolve().then(async () => { state.user = session?.user ?? null; await loadUser(); if (location.hash === '#confirmed' && state.user) { location.hash='dashboard'; notify('Email confirmed — your account is ready.'); } await render(); });
+    }
+  });
+  async function initialize() {
+    const params = new URLSearchParams(location.search);
+    const hash = new URLSearchParams(location.hash.startsWith('#') ? location.hash.slice(1) : location.hash);
+    const authError = params.get('error_description') || hash.get('error_description');
+    if (authError) notify(authError.replace(/\+/g,' '));
+    await loadUser();
+    if (location.hash === '#confirmed' && state.user) { location.hash='dashboard'; notify('Email confirmed — your account is ready.'); }
+    await render();
+  }
+  initialize().catch(error => { console.error('DigiSoft initialization error:',error); app.innerHTML = `<section class="card"><h2>Unable to start DigiSoft</h2><p>${esc(error.message || 'Check your connection and configuration, then reload.')}</p><button class="btn" data-act="retry">Try again</button></section>`; });
+})();
 </script>
 </body>
 </html>
