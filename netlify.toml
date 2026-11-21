@@ -1,0 +1,9 @@
+[build]
+  publish = "."
+
+# Serve the single-page app for callback/deep-link paths as well as the root.
+# The client-side app uses hash routing; this fallback does not alter its routes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
